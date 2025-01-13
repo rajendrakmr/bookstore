@@ -6,7 +6,7 @@ FROM node:20 AS builder
 WORKDIR /app
 
 # Copy the current directory contents to the working directory inside the container
-COPY . /app
+COPY /home/ubuntu/devops/workspace/react-cicd/Frontend /app
 
 # Install the dependencies
 RUN npm install
