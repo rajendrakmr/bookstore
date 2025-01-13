@@ -17,6 +17,9 @@ const PORT = process.env.PORT || 4000;
 const URI = process.env.MongoDBURI;
 
 // connect to mongoDB
+app.get('/', (req, res) => {
+    res.send('Welcome to the Node.js API!');
+  });
 try {
     mongoose.connect(URI, {
         useNewUrlParser: true,

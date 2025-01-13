@@ -3,7 +3,9 @@ import bcryptjs from "bcryptjs";
 export const signup = async(req, res) => {
     try {
         const { fullname, email, password } = req.body;
+        console.log("req.body",req.body)
         const user = await User.findOne({ email });
+        console.log('useruser',user)
         if (user) {
             return res.status(400).json({ message: "User already exists" });
         }
@@ -23,8 +25,8 @@ export const signup = async(req, res) => {
             },
         });
     } catch (error) {
-        console.log("Error: " + error.message);
-        res.status(500).json({ message: "Internal server error" });
+        console.log("Error: " + error);
+        res.status(500).json({ message: error });
     }
 };
 export const login = async(req, res) => {
